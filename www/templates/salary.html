@@ -1,0 +1,84 @@
+<ion-view cache-view="false"  ng-controller="LoginCtrl">
+	<ion-nav-title>
+	  <span class="bar-stable"><strong class="header-title">SALARY</strong></span>
+	</ion-nav-title>
+	
+	<ion-nav-buttons side="left" >
+	  <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+
+	<ion-nav-buttons side="right">
+  		<button class="icon header-title ion-power" ng-click="logout()"></button>
+	</ion-nav-buttons>
+
+	<div class="bar bar-subheader">
+	    <span>Bharath</span>
+    </div>
+
+   <ion-content class="ion-content content-pad">
+    <div class="button-bar">
+      <a class="button button-block" ng-class="{'button-circle': dollar == true}" ng-click="dollarButton()">Dollar</a>
+      <a class="button button-block" ng-class="{'button-circle': bill == true }" ng-click="billButton()">Bill Rate</a>
+  	</div>
+
+	  <div ng-show="dollar">
+	  	<div class="row bill-content">
+	  		<h2>${{min.dollar}}</h2>
+	  	</div>
+	  	<div class="row bill-content">
+	  		<p>HOURLY&nbsp;<span class="pink">$32.93</span> </p>
+	  	</div>
+
+	  	<div class="row group1">
+		  	<rzslider 
+		  		 rz-slider-model="min.dollar"
+		    	rz-slider-floor="DollarSlider.floor"
+		    	rz-slider-ceil="DollarSlider.ceil">
+		    </rzslider>
+	  	</div>
+	  </div>
+
+	  <div ng-show="bill">
+	  	<div class="row bill-content">
+	  		<h2>${{min.bill}}</h2>
+	  	</div>
+	  	<div class="row bill-content">
+	  		<p>HOURLY&nbsp;<span class="pink">$32.93</span> </p>
+	  	</div>
+
+	  	<div class="row group1">
+		  	<rzslider 
+		  		 rz-slider-model="min.bill"
+		    	rz-slider-floor="BillSlider.floor"
+		    	rz-slider-ceil="BillSlider.ceil">
+		    </rzslider>
+	  	</div>
+	  </div>
+
+  	<div class="row bill-content">
+  		<p>Per Diem</p>
+  	</div>
+  	<div class="row group-center">
+  		<div class="col col-50 col-50-align">
+  			<span>Daily Max:</span>
+  		</div>
+  		<div class="col col-50">
+  			<input type="text" class="button botton-border button-block">
+  		</div>
+  	</div>
+
+   </ion-content>
+
+    <div class="bar bar-footer">
+	    <div class="row">
+        <div class="col col-50 footer-title">
+          Adj.Rate:<span>{{adjRate}}
+        </div>
+        <div class="col col-50 footer-title">
+          Margin:<span>${{marginDollar}}-{{marginPercentage}}%
+        </div>
+      </div>
+  	</div>
+	  
+
+</ion-view>

@@ -1,0 +1,283 @@
+.bar-stable{
+  background-color: #fff !important;
+  color:#fff;
+}
+
+.bar-subheader{
+	background-color: #fafcfc !important;
+  color:#fff;
+  top: 10px;
+  height:30px;
+  text-align: center;
+}
+
+.bar-subheader span{
+  color:#45539a;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.bar-subheader p{
+  color:#9c9c9c;
+  font-size: 14px;
+}
+
+.tabs {
+  height: 60px;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top {
+    background: #ebf5ff;
+    top: 45px;
+}
+
+/*.tab-item.tab-item-active{
+  background-color: #45539a;
+  border-radius: 50%;
+}
+
+.tab-item.tab-item-active i{
+  color: #fff;
+}
+
+.tab-item .icon {
+    font-size: 40px;
+    color: #45539a;
+    padding:6px;
+}
+*/
+
+.tab-live {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-image: url('../img/ionic.png');
+}
+.tab-replay {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-image: url('../img/logo.png');
+}
+
+
+
+.button-block{
+  margin-top: 0px !important;
+  margin-bottom: 5px !important;
+}
+
+.logo{
+	width: 100%;
+	text-align: center;
+	padding: 50px;
+}
+.start{
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+}
+
+.ion-content{
+  background-color: #fff;
+}
+
+.group-icon_right{
+  float: right;
+  color: #d75b7e;
+}
+
+.group-icon_left{
+  float: left;
+  color: #d75b7e;
+}
+.ion-plus-circled{
+  font-size:40px;
+}
+
+.botton-border{
+  border: 1px #d8d8d8 solid !important;
+  text-align: left;
+}
+
+.button-border_left{
+  border-bottom: 1px #d8d8d8 solid !important;
+  border-left: 1px #d8d8d8 solid !important;
+  border-top: 1px #d8d8d8 solid !important;
+}
+
+
+.content-header{
+  background-color: #ebf5ff;
+  justify-content:center;
+  font-size: 14px;
+  align-items:center;
+  padding:12px;
+  margin-bottom:20px;
+}
+
+
+
+.content-header p{
+  margin-bottom:0; 
+}
+
+
+.bill-content{
+  justify-content:center;
+}
+
+.col-50-align h2{
+  font-size: 50px;
+}
+
+.col-50-align-left{
+  align-items:left;
+}
+
+.line{
+  border-right: 1px #939393 solid;
+}
+
+.bill-content h2{
+  font-size: 50px;
+}
+
+.bill-content p{
+  font-size: 18px;
+}
+.pink{
+  color: #d75b7e; 
+}
+
+.group-center{
+  align-items:center; 
+}
+.col-50-align{
+  text-align: center;
+}
+
+.content-pad{
+	margin-top: 42px;
+	padding-top: 20px;
+}
+
+.button-purple{
+	background-color: #45539a;
+	color: #fff;
+}
+
+.button-circle{
+  background-color: #45539a;
+  color: #fff;
+  border-radius: 17px 17px 17px 14px !important; 
+}
+
+.button-bar{
+  padding:20px;
+}
+
+/*.button-bar .button:first-child {
+    border-radius: 21px 21px 20px 19px;
+}
+
+
+.button-bar .button:last-child {
+    border-radius: 21px 21px 20px 19px;
+}*/
+
+.bar{
+	padding :0px !important;
+	font-size: 20px;
+}
+
+.bar-footer{
+	background-color: #45539a;
+	color: #fff;
+	text-align: left;
+	font-size: 18px;
+
+}
+
+.item-input .icon {
+    min-width: 53px;
+    font-size: 35px;
+}
+
+.border{
+  border:1px #939393 solid;;
+}
+
+
+.header-title{
+    color: #45539a;
+    background-color: transparent;
+    border:transparent; 
+}
+
+.footer-title{
+  font-size: 16px;
+  justify-content:center;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1px solid #d75b7e;
+}
+
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #d75b7e;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+

@@ -1,0 +1,73 @@
+<ion-view cache-view="false" ng-controller="LoginCtrl">
+	<ion-nav-title>
+	  <span class="bar-stable"><strong class="header-title">PTO</strong></span>
+	</ion-nav-title>
+	
+	<ion-nav-buttons side="left" >
+	  <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+
+	<ion-nav-buttons side="right">
+  		<button class="icon header-title ion-power" ng-click="logout()"></button>
+	</ion-nav-buttons>
+
+	<div class="bar bar-subheader">
+	    	<span>Bharath</span>
+    </div>
+
+   <ion-content class="ion-content content-pad">
+    <div class="button-bar">
+      <a class="button button-block" ng-class="{'button-circle': standard == true}" ng-click="standarButton()">Standard</a>
+      <a class="button button-block" ng-class="{'button-circle': other == true }" ng-click="otherButton()">Other</a>
+  	</div>
+
+	  <div ng-show="standard">
+	  	<div class="row group-center">
+			<div class="col col-50 col-50-align line">
+				<p>HOURS</p>
+				<h2>15</h2>
+			</div>
+			<div class="col col-50 col-50-align">
+				<p>DAYS</p>
+				<h2 >10</h2>
+			</div>
+	  	</div>
+	  </div>
+
+	  <div ng-show="other">
+	  	<div class="row group-center">
+			<div class="col col-50 col-50-align line">
+				<p>HOURS</p>
+				<h2>{{min.other}}</h2>
+			</div>
+			<div class="col col-50 col-50-align">
+				<p>DAYS</p>
+				<h2 >0</h2>
+			</div>
+	  	</div>
+	  	<br>
+	  	<div class="row group1">
+		  	<rzslider 
+		  		 rz-slider-model="min.other"
+		    	rz-slider-floor="otherSlide.floor"
+		    	rz-slider-ceil="otherSlide.ceil">
+		    </rzslider>
+	  	</div>
+	  </div>
+
+  	
+
+   </ion-content>
+
+    <div class="bar bar-footer">
+	    <div class="row">
+        <div class="col col-50 footer-title">
+          Adj.Rate:<span>{{adjRate}}
+        </div>
+        <div class="col col-50 footer-title">
+          Margin:<span>${{marginDollar}}-{{marginPercentage}}%
+        </div>
+      </div>
+  	</div>
+
+</ion-view>
