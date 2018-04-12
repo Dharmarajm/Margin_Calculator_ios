@@ -1,0 +1,17 @@
+<ion-view cache-view="false" ng-controller="LoginCtrl">
+	<ion-nav-title>
+	  <span class="bar-stable"><strong class="header-title">SELECT STATE</strong></span>
+	</ion-nav-title>
+	
+   <ion-content class="ion-content">
+    <div class="row" ng-repeat="i in ['Alaska','California','Florida','Georgia','Hawali','Ohio']">
+        <button class="button button-block button-white" ng-click="backLocation()">
+        <i class="icon ion-chevron-left group-icon_left"></i>
+          {{i}} 
+        </button>
+    </div>
+
+   </ion-content>
+
+
+</ion-view>

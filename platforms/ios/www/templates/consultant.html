@@ -1,0 +1,96 @@
+<ion-view ng-controller="LoginCtrl">
+
+
+	<ion-nav-title>
+	  <span class="bar-stable"><strong class="header-title">CONSULTANT</strong></span>
+	</ion-nav-title>
+	
+	<ion-nav-buttons side="left" >
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+	<ion-nav-buttons side="right">
+  		<button class="icon header-title ion-power" ng-click="logout()"></button>
+	</ion-nav-buttons>
+
+
+   <ion-content class="ion-content content-pad">
+
+   	<div class="groupText">      
+      <input class="inputMaterial" type="text" ng-Required="true"  ng-model="consultant" required>
+      <span class="highlight"></span>
+      <div class="label">Name</div>
+    </div>
+
+    <div class="row">
+      <div class="groupButton">
+        <button class="button button-block button-white" ng-click="visa()">
+          {{visaname}}<i class="icon ion-chevron-right group-icon_right"></i>
+        </button>
+      </div>
+  	</div>
+
+    <div class="row">
+      <div class="col col-50">
+        <div class="row">
+          Bill Rate
+        </div> 
+        <div class="row">
+          <input type="text" class="button button-block button-border_left">
+          <label class="button button-block botton-border">$</label>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="row">
+          Client Fee
+        </div> 
+        <div class="row">
+          <input type="text" class="button button-block button-border_left">
+          <label class="button button-block botton-border">%</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col col-50">
+        <div class="row">
+          LCA Min
+        </div> 
+        <div class="row">
+          <input type="text" class="button button-block botton-border">
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="row">
+          Location
+        </div> 
+        <div class="row">
+          <input type="text" class="button button-block botton-border">
+        </div>
+      </div>
+    </div>   
+
+
+    <!-- <div class="row">
+      <input type="range"  placeholder="Name" ng-Required="true"  ng-model="user.text" style="font-size: 30px;" nim="0">
+    </div> -->
+
+
+
+   </ion-content>
+
+    <div class="bar bar-footer">
+	    <!-- <div class="footer-title">Margin:&nbsp;<span class="title">${{marginDollar}}-{{marginPercentage}}%</span></div> -->
+
+      <div class="row">
+        <div class="col col-50 footer-title">
+          Adj.Rate:<span>{{adjRate}}
+        </div>
+        <div class="col col-50 footer-title">
+          Margin:<span>${{marginDollar}}-{{marginPercentage}}%
+        </div>
+      </div>
+  	</div>
+
+</ion-view>

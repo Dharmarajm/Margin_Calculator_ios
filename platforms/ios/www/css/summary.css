@@ -1,0 +1,41 @@
+
+.sub-title-text{
+	color: grey;
+}
+.title-text{
+	color: black;
+	font-weight: bold;
+}
+.center-border{
+    border-left: 1px solid #bfbfbf;
+}
+.percent-value{
+	margin: 0px 10px;
+	color: #f00fed;
+	line-height: 0.1em;
+	font-weight: bold;
+}	
+.doller-value{
+	color: #514d4d;
+}
+.sub-emp-text{
+	color: #f00fed;
+	line-height: .1em;
+	margin: 0px 8px;
+}
+.emp-text{
+	color: black;
+	font-weight: bold;
+}
+.cost-text{
+	color: grey;
+}
+.cost-total-text{
+	color: #f00fed;
+	font-weight: bold;
+}
+.email-btn{
+	color: white;
+	background-color: #6562dd;
+	font-weight: bold;
+}
