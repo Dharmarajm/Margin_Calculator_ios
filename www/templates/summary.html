@@ -12,20 +12,16 @@
 	</ion-nav-buttons>
 
 	
-
-   <ion-content class="ion-content" padding="true">
-   	<div>	
-		<div class="row">
-   			<div class="col col-45">
-	    	    <h5 class="title-text">Hairsh</h5>
-	    	    <h6 class="sub-title-text">Altius Solution</h6>
-		    </div>
-		    <div class="col col-10 center-border"></div>
-		    <div class="col col-45">
-		    	<h5 class="title-text">Bharath</h5>
-		  	</div>
-   		</div>
+	<div class="smry-consultant">
+		<span>
+			<h3>ARUN </h3>
+			<p>TOM Technology</p>
+		</span>
+		<span>
+			<h2>James</h2>
+		</span>
 	</div>
+   <ion-content class="ion-content content-view smry-content" ng-class="{'animate-in-primary': data == 'swiperight' , 'animate-in-secondary': data == 'swipeleft' }">
    		
 
    	<!-- 	 <center><h5>EMP CONTRIBUTION</h5></center>
@@ -42,107 +38,108 @@
    		</div>
  -->
    		<!--  <center><h5>COST SUMMARY</h5></center> -->
-   		 <div class="row content-header">
+   		 <div class="content-header">
 	      	<p>COST SUMMARY</p>
-	      </div>
+	     </div>
 
-		<div>
-   		 <div class="row">
-   		 	<div class="col col-10"></div>
-   			<div class="col col-40">
-	    	    <h6 class="cost-text">Salary</h6>
-		    </div>
-		    <div class="col col-20"></div>
-		    <div class="col col-30">
-		    	<h6 class="cost-text">$27.2</h6>
-		  	</div>
-   		 </div>
+	     <div class="smry-table">
+	     	<div class="card-border">
+	     		<table width="100%">
+	     			<tr>
+	     				<th>Salary</th>
+	     				<td>$40.00</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Fed Taxes</th>
+	     				<td>$3.37</td>
+	     			</tr>
+	     			<tr>
+	     				<th>State Taxes</th>
+	     				<td>$0.11</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Visa</th>
+	     				<td>-</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Perdiem</th>
+	     				<td>-</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Med/Dent</th>
+	     				<td>-</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Relo</th>
+	     				<td>-</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Misc 1 Exp</th>
+	     				<td>$1.83</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Misc 2 Exp</th>
+	     				<td>$0.65</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Misc 3 Exp</th>
+	     				<td>$0.50</td>
+	     			</tr>
+	     			<tr>
+	     				<th>Misc Ins</th>
+	     				<td>$0.50</td>
+	     			</tr>
+	     			<tr>
+	     				<td>Total</td>
+	     				<td>$46.96</td>
+	     			</tr>
+	     		</table>
+	     	</div>
+	     </div>
 
-   		 <div class="row">
-   		 	<div class="col col-10"></div>
-   			<div class="col col-40">
-	    	    <h6 class="cost-text">Fed Taxes</h6>
-		    </div>
-		    <div class="col col-20"></div>
-		    <div class="col col-30">
-		    	<h6 class="cost-text">$27.2</h6>
-		  	</div>
-   		 </div>
-
-
-   		 <div class="row">
-   		 	<div class="col col-10"></div>
-   			<div class="col col-40">
-	    	    <h6 class="cost-text">State Taxes</h6>
-		    </div>
-		    <div class="col col-20"></div>
-		    <div class="col col-30">
-		    	<h6 class="cost-text">$27.2</h6>
-		  	</div>
-   		 </div>
-
-   		 <div class="row">
-   		 	<div class="col col-10"></div>
-   			<div class="col col-40">
-	    	    <h6 class="cost-text">Vise</h6>
-		    </div>
-		    <div class="col col-20"></div>
-		    <div class="col col-30">
-		    	<h6 class="cost-text">-</h6>
-		  	</div>
-   		 </div>
-
-   		 <div class="row">
-   		 	<div class="col col-10"></div>
-   			<div class="col col-40">
-	    	    <h6 class="cost-total-text">Total</h6>
-		    </div>
-		    <div class="col col-20"></div>
-		    <div class="col col-30">
-		    	<h6 class="cost-total-text">$49</h6>
-		  	</div>
-   		 </div>
-   		</div>
-
-
-   		<div class="row content-header">
+   		<div class="content-header">
 	      	<p>ACTUAL MARGIN</p>
 	      </div>
    		<!--  <center><h5>ACTUAL MARGIN</h5></center> -->
-   		<div>
    		 <div class="row">
    			<div class="col col-50">
-	    	    <h4 class="emp-text">3.19$</h4>
+	    	    <div class="card-border">
+	    	    	<h4 class="emp-text">$13.19</h4>
+	    	    </div>
 		    </div>
 		    <div class="col col-50">
-		    	<h4 class="emp-text">45%</h4>
+		    	<div class="card-border">
+		    		<h4 class="emp-text">45%</h4>
+		    	</div>
 		  	</div>
    		 </div>
-   		</div>
 
-<div class="row content-header">
-	      	<p>BILL RATE RANGE</p>
-	      </div>
+
+		<div class="content-header">
+			<p>DESIRED MARGIN %</p>
+		</div>
    		 <!-- <center><h5>BILL RATE RANGE</h5></center> -->
+   		<!-- <div class="row bill-rate">
+   			<div class="col col-60">
+   				<div class="card-border">
+		    	    <h6 class="percent-value">15%</h6>
+		    	    <h5 class="doller-value">$25.75</h5>
+   				</div>
+		    </div>
 
+   		</div> -->
 
    		<div class="row">
-   			<div class="col col-25">
-	    	    <h6 class="percent-value">12%</h6>
-	    	    <h5 class="doller-value">$55.75</h5>
+   			<div class="col col-50">
+	    	    <div class="card-border">
+	    	    	<h4 class="emp-text">$25.75</h4>
+	    	    </div>
 		    </div>
-		    <div class="col col-25">
-	    	    <h6 class="percent-value">12%</h6>
-	    	    <h5 class="doller-value">$55.75</h5>
-		    </div>
-		    <div class="col col-25">
-	    	    <h6 class="percent-value">12%</h6>
-	    	    <h5 class="doller-value">$55.75</h5>
-		    </div>
-		    <div class="col col-25">
-	    	    <h6 class="percent-value">12%</h6>
-	    	    <h5 class="doller-value">$55.75</h5>
-		    </div>
+		    <div class="col col-50">
+		    	<div class="card-border">
+		    		<h4 class="emp-text">15%</h4>
+		    	</div>
+		  	</div>
    		</div>
    		
 

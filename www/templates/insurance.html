@@ -1,6 +1,6 @@
 <ion-view cache-view="false" ng-controller="LoginCtrl">
 	<ion-nav-title>
-	  <span class="bar-stable"><strong class="header-title">INSUARNCE</strong></span>
+	  <span class="bar-stable"><strong class="header-title">INSURANCE</strong></span>
 	</ion-nav-title>
 	
 	<ion-nav-buttons side="left" >
@@ -11,105 +11,103 @@
   		<button class="icon header-title ion-power" ng-click="logout()"></button>
 	</ion-nav-buttons>
 
-	<div class="bar bar-subheader">
-	    <span>Bharath</span>
-    </div>
+	<h1 class="consultant-name">James</h1>
 
-   <ion-content class="ion-content content-pad">
+   <ion-content class="ion-content content-view insurance-content" ng-class="{'animate-in-primary': data == 'swiperight' , 'animate-in-secondary': data == 'swipeleft' }">
    		 
-   		  <div class="row content-header">
+   		  <div class="content-header">
 	      	<p>MEDICAL</p>
 	      </div>
          <div>
-		   <div class="row">
-		        <div class="col col-10"></div>
-			    <div class="col col-40">
+		   <div class="row radio">
+			    <div class="col col-50">
 			    	<label class="container">Single
 					  <input type="radio" checked="checked" name="radio">
 					  <span class="checkmark"></span>
 					</label>
 			    </div>			    
-			    <div class="col col-40">
+			    <div class="col col-50">
 			    	<label class="container">Couple
 					  <input type="radio" checked="checked" name="radio">
 					  <span class="checkmark"></span>
 					</label>
 			  	</div>
-			  	<div class="col col-10"></div>
 		    </div>
 
-           <div class="row">
-                <div class="col col-10"></div>
-  			    <div class="col col-40">
+           <div class="row radio">
+  			    <div class="col col-50">
 			    	<label class="container">Family
 					  <input type="radio" checked="checked" name="radio">
 					  <span class="checkmark"></span>
 					</label>
 			    </div>
-			    <div class="col col-40">
+			    <div class="col col-50">
 			    	<label class="container">E & C
 					  <input type="radio" checked="checked" name="radio">
 					  <span class="checkmark"></span>
 					</label>
 			  	</div>
-			  	<div class="col col-10"></div>
 		    </div>
 
 </div>
-                  <div class="row content-header">
+                  <div class="content-header">
 				      <p>DENTAL</p>
 				    </div>
      <div>
 
-		   <div class="row">
-		        <div class="col col-10"></div>
-			    <div class="col col-40">
+		   <div class="row radio">
+		        
+			    <div class="col col-50">
 			    	<label class="container">Single
 					  <input type="radio" checked="checked" name="radio1">
 					  <span class="checkmark"></span>
 					</label>
 			    </div>			    
-			    <div class="col col-40">
+			    <div class="col col-50">
 			    	<label class="container">Couple
 					  <input type="radio" checked="checked" name="radio1">
 					  <span class="checkmark"></span>
 					</label>
 			  	</div>
-			  	<div class="col col-10"></div>
+			  	
 		    </div>
 
-           <div class="row">
-                <div class="col col-10"></div>
-  			    <div class="col col-40">
+           <div class="row radio">
+                
+  			    <div class="col col-50">
 			    	<label class="container">Family
 					  <input type="radio" checked="checked" name="radio1">
 					  <span class="checkmark"></span>
 					</label>
 			    </div>
-			    <div class="col col-40">
+			    <div class="col col-50">
 			    	<label class="container">E & C
 					  <input type="radio" checked="checked" name="radio1">
 					  <span class="checkmark"></span>
 					</label>
 			  	</div>
-			  	<div class="col col-10"></div>
+			  	
 		    </div>
    
 	</div>
 
 
-					<div class="row content-header">
+					<div class="content-header">
 				      <p>EMP CONTRIBUTION</p>
 				    </div>
 
 				    <div class="row group-center">
 					<div class="col col-50 col-50-align">
-						<p class="pink">Medical</p>
-						<h4>$32.92</h4>
+						<div class="card-border">
+							<p class="pink">Medical</p>
+							<h4>$32.92</h4>
+						</div>
 					</div>
 					<div class="col col-50 col-50-align">
-						<p class="pink">Dental</p>
-						<h4>$30.00</h4>
+						<div class="card-border">
+							<p class="pink">Dental</p>
+							<h4>$30.00</h4>
+						</div>
 					</div>
 			  		</div>
 
@@ -122,13 +120,16 @@
    </ion-content>
 
     <div class="bar bar-footer">
-	    <div class="row">
+      <!-- <div class="footer-title">Margin:&nbsp;<span class="title">${{marginDollar}}-{{marginPercentage}}%</span></div> -->
+
+      <div class="row">
         <div class="col col-50 footer-title">
-          Adj.Rate:<span>{{adjRate}}
+          Adj. Rate:<span>${{adjRate}}</span>
         </div>
         <div class="col col-50 footer-title">
-          Margin:<span>${{marginDollar}}-{{marginPercentage}}%
+          Margin:<span>${{marginDollar}} - {{marginPercentage}}%</span>
         </div>
       </div>
-  	</div>
+    </div>
+
 </ion-view>

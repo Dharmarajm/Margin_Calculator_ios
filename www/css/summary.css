@@ -11,12 +11,13 @@
 }
 .percent-value{
 	margin: 0px 10px;
-	color: #f00fed;
-	line-height: 0.1em;
+	color: #d75b7e;
+	line-height: 1;
 	font-weight: bold;
 }	
 .doller-value{
 	color: #514d4d;
+	margin-bottom: 2px;
 }
 .sub-emp-text{
 	color: #f00fed;
@@ -26,6 +27,7 @@
 .emp-text{
 	color: black;
 	font-weight: bold;
+	text-align: center;
 }
 .cost-text{
 	color: grey;
@@ -35,7 +37,23 @@
 	font-weight: bold;
 }
 .email-btn{
-	color: white;
-	background-color: #6562dd;
-	font-weight: bold;
+    color: white;
+    background-color: #5153a3;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px !important;
+    min-height: 35px;
+    line-height: 30px;
+}
+.bar.bar-assertive {
+    border-color: #5153a3;
+    background-color: #5153a3;
+    background-image: none;
+    color: #fff;
+	height: 150px;
+    text-align: center;
+    padding: 0 30px !important;
+}
+.bar.bar-assertive img{
+	width: 100%;
 }

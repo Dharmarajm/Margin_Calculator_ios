@@ -1,5 +1,6 @@
 // Ionic Starter App
 
+
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -136,7 +137,7 @@ angular.module('starter', ['ionic','rzModule'])
   });
   
   if(localStorage.getItem("user") == 0){
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/tab/consultant');
   }
   else{
    $urlRouterProvider.otherwise('/register'); 
@@ -196,17 +197,31 @@ angular.module('starter', ['ionic','rzModule'])
       $state.go("tab.consultant") 
     }
 
-    $scope.marginPercentage=0;
-    $scope.marginDollar=0;
-    $scope.dollar=true;
-    $scope.billButton=function(){
-      $scope.dollar=false;
-      $scope.bill=true;
-    }
-    $scope.dollarButton=function(){
-      $scope.dollar=true;
+    $scope.marginPercentage=45;
+    $scope.marginDollar=13.19;
+
+    $scope.anual=true;
+
+
+    
+    $scope.anualButton=function(){
+      $scope.hour=false;
+      $scope.anual=true;
       $scope.bill=false;
     }
+    $scope.hourlyButton=function(){
+      $scope.hour=true;
+      $scope.anual=false;
+      $scope.bill=false;
+    }
+
+    $scope.billButton=function(){
+      $scope.bill=true;
+      $scope.anual=false;
+      $scope.hour=false;
+    }
+
+
 
     $scope.standard=true;
     $scope.standarButton=function(){
@@ -251,11 +266,11 @@ angular.module('starter', ['ionic','rzModule'])
     }
 
     $scope.email=function(){
-      alert("Cost Summary for xyz is send to your email.")
+      alert("Cost Summary for James is send to your email.")
       $state.go("dashboard")
     }
 
-    $scope.adjRate=0;
+    $scope.adjRate=42;
 
     $scope.misc_bill=true;
     /*misc_hour
@@ -266,9 +281,25 @@ angular.module('starter', ['ionic','rzModule'])
       bill:18,
       other:0,
       relocation:0,
-      mis_bill:1
+      mis_bill:1,
+      hourly:1,
+      rate:1
+
     }
 
+    $scope.hourSlider = {
+      min: 1,
+      max: 24,
+      ceil: 24,
+      floor: 1,
+    };
+
+    $scope.rateSlider = {
+      min: 1,
+      max: 100,
+      ceil: 100,
+      floor: 1,
+    };
 
 
     $scope.DollarSlider = {
@@ -287,8 +318,8 @@ angular.module('starter', ['ionic','rzModule'])
 
     $scope.otherSlide = {
       min: 0,
-      max: 30,
-      ceil: 30,
+      max: 24,
+      ceil: 24,
       floor: 0,
     };
 
@@ -307,18 +338,38 @@ angular.module('starter', ['ionic','rzModule'])
       floor: 1,
     };   
   
-
+    $scope.open=false;
 
 
 
 })
 
-.controller('NavCtrl', function($scope, $ionicSideMenuDelegate) {
-  $scope.showMenu = function () {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-  $scope.showRightMenu = function () {
-    $ionicSideMenuDelegate.toggleRight();
-  };
-})
+.directive('tabsSwipable', function($ionicGesture) {
+    return {
+      restrict: 'A',
+      require: 'ionTabs',
+      link: function(scope, elm, attrs, tabsCtrl) {
+        var onSwipeLeft = function() {
+          var target = tabsCtrl.selectedIndex() + 1;
+          if (target < tabsCtrl.tabs.length) {
+            scope.data="swipeleft";
+            scope.$apply(tabsCtrl.select(target));
+          }
+        };
+        var onSwipeRight = function() {
+          var target = tabsCtrl.selectedIndex() - 1;
+          if (target >= 0) {
+            scope.data="swiperight";
+            scope.$apply(tabsCtrl.select(target));
+          }
+        };
 
+        var swipeGesture = $ionicGesture.on('swipeleft', onSwipeLeft, elm)
+          .on('swiperight', onSwipeRight);
+        scope.$on('$destroy', function() {
+          $ionicGesture.off(swipeGesture, 'swipeleft', onSwipeLeft);
+          $ionicGesture.off(swipeGesture, 'swiperight', onSwipeRight);
+        });
+      }
+    };
+});
