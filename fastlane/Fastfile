@@ -34,7 +34,7 @@ platform :ios do
         "release": {
           "codeSignIdentity": "iPhone Distribution",
           "provisioningProfile": "#{profile_uuid}",
-          "packageType": "app-store",
+          "packageType": "ad-hoc",
           "developmentTeam": ENV["FASTLANE_TEAM_ID"]
         }
       }
