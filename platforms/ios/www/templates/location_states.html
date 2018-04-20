@@ -1,26 +1,15 @@
-<ion-view cache-view="false" ng-controller="LoginCtrl" hide-nav-bar="true">
-    <div class="bar bar-header visa">
-      <h1 class="title">SELECT STATE</h1>
-    </div>
-   <ion-content class="ion-content visa-status">
+<ion-view cache-view="false" hide-nav-bar="true">
+  <div class="bar bar-header visa">
+    <h1 class="title">SELECT STATE</h1>
+  </div>
+  <ion-content class="ion-content visa-status">
     <ul class="list">
-        <li class="item" ng-repeat="i in ['Alaska','California','Florida','Georgia','Hawali','Ohio']" ng-click="backLocation(i)">
-            <i class="icon ion-chevron-left"></i>
-            <h1>{{i}}</h1>
-        </li>
+      <li class="item" ng-repeat="i in ['Alaska','California','Florida','Georgia','Hawali','Ohio']" ng-click="backLocation(i)">
+        <i class="icon ion-chevron-left"></i>
+        <h1>{{i}}</h1>
+      </li>
     </ul>
-<!--     <div class="row" ng-repeat="i in ['H1-New/Xfer','H1 Contn..','GC Holder','US Citizen']">
-        <button class="button button-block button-white" ng-click="backVisa(i)">
-        <i class="icon ion-chevron-left group-icon_left"></i>
-          {{i}} 
-        </button>
-    </div> --> 
-
-   </ion-content>
+  </ion-content>
 
 
 </ion-view>
-
-
-
-
