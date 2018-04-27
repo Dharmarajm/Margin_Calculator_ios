@@ -19,7 +19,13 @@ platform :ios do
     cert
     
     # Create/fetch provisioning profile
-    profile_uuid = sigh
+    profile_uuid = get_provisioning_profile( adhoc: true,
+                                             readonly: true,
+                                             provisioning_name:ENV['SIGH_PROVISIONING_PROFILE_NAME'],
+                                             username:ENV['FASTLANE_USER']
+                                           )
+    UI.success "Successfully built uuid: #{profile_uuid}"
+
     
     # Delete iOS platform
       FileUtils.rm_rf('../platforms/ios')
@@ -48,8 +54,42 @@ platform :ios do
     # Build iOS release IPA
     sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
     
+
+    gym(scheme: "MARGINO",
+      clean: true,
+      export_method: "ad-hoc",
+      export_team_id: ENV["FASTLANE_TEAM_ID"],
+      include_bitcode: true,
+      include_symbols: false,
+      configuration: "Release",
+      export_xcargs: "-allowProvisioningUpdates",
+      codesigning_identity: "iPhone Distribution",
+      #skip_profile_detection: true,
+      output_directory:"~/Library/Developer/Xcode/Archives/",
+      buildlog_path:"~/Library/Logs/fastlane/xcbuild",
+      output_name:"MARGINO.ipa",
+      #skip_build_archive: true,
+      export_options: {
+      method: "ad-hoc",
+      signingStyle: "automatic",
+      teamID: ENV["FASTLANE_TEAM_ID"],
+      manifest: {
+          appURL: "https://server.local/apps/MARGINO.ipa",
+          displayImageURL: "https://server.local/TestApp.png",
+          fullSizeImageURL: "https://server.local/TestApp.png"
+      },
+      thinning: "<thin-for-all-variants>",
+      provisioningProfiles: {
+        ENV['SIGH_APP_IDENTIFIER'] => ENV['SIGH_PROVISIONING_PROFILE_NAME']
+      },
+      signingCertificate: "iPhone Distribution"
+      }
+    )
+
     # Get IPA path
-    ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
+    #ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
+    ipa_path = Dir.glob('/Users/altius-mac/Library/Developer/Xcode/Archives/Apps/MARGINO.ipa').first
+    UI.success "IPA PATH: #{ipa_path}"
     ipa_path = File.absolute_path ipa_path
     UI.success "Successfully built IPA: #{ipa_path}"
    

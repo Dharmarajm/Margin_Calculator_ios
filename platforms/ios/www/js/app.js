@@ -31,6 +31,7 @@ angular.module('starter', ['ionic',
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.views.swipeBackEnabled(false); 
   $ionicConfigProvider.tabs.position('top');
 
   $stateProvider
