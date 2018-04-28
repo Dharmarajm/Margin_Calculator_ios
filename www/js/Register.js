@@ -3,13 +3,13 @@ angular.module('Register', [])
 .controller('RegisterCtrl', function($ionicPlatform,$scope, $state, $http, $rootScope,$ionicPopup,$cordovaDevice) {
 
 
-  $ionicPlatform.ready(function() {
+ //  $ionicPlatform.ready(function() {
   
-      var device = $cordovaDevice.getDevice();
-      $scope.uuid = device.uuid;
-      console.log(device,$scope.uuid);
-      $scope.$apply();
- });
+ //      var device = $cordovaDevice.getDevice();
+ //      $scope.uuid = device.uuid;
+ //      console.log(device,$scope.uuid);
+ //      $scope.$apply();
+ // });
   
   $scope.user = {
     email: '',
@@ -33,7 +33,7 @@ angular.module('Register', [])
         "email": $scope.user.email,
         "activation_code": $scope.user.active,
         "password": $scope.user.password,
-        "device_id":$scope.uuid
+        "device_id":'3EC5DA3E-A50C-4FCB-AB7E-EC6ACDEBB624'
       };
       console.log(data)
       $http({

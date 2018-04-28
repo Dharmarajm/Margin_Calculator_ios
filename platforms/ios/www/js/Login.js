@@ -2,12 +2,12 @@ angular.module('Login', [])
 
 .controller('LoginCtrl', function($state,$scope,$http,$rootScope,$ionicPopup,$ionicPlatform,$cordovaDevice) {
   
-  $ionicPlatform.ready(function() {
+  // $ionicPlatform.ready(function() {
    
-      var device = $cordovaDevice.getDevice();
-      $scope.uuid = device.uuid;
-      console.log(device,$scope.uuid);
-  });
+  //     var device = $cordovaDevice.getDevice();
+  //     $scope.uuid = device.uuid;
+  //     $scope.$apply();
+  // });
 
   /*This is used to variable declaration using login page*/
   $scope.user = {
@@ -22,7 +22,7 @@ angular.module('Login', [])
     var data = {
       "email": $scope.user.email,
       "password": $scope.user.password,
-      "device_id": $scope.uuid
+      "device_id": '3EC5DA3E-A50C-4FCB-AB7E-EC6ACDEBB624'
     };
 
     $http({
@@ -56,7 +56,7 @@ angular.module('Login', [])
     else{
       var data = {
         "email": $scope.user.email,
-        "device_id": $scope.uuid
+        "device_id": '3EC5DA3E-A50C-4FCB-AB7E-EC6ACDEBB624'
       };
 
       $http({

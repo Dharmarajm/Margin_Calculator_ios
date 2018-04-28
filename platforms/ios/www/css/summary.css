@@ -50,9 +50,9 @@
     background-color: #5153a3;
     background-image: none;
     color: #fff;
-	height: 150px;
+	/*height: 150px;*/
     text-align: center;
-    padding: 0 30px !important;
+    padding: 75px 30px !important;
 }
 .bar.bar-assertive img{
 	width: 100%;
