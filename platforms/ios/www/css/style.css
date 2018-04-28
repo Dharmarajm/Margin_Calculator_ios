@@ -343,9 +343,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
 }
 .bar-header{
   border-bottom: 0px;
-  padding: 0px 10px !important;
+  padding: 28px 10px !important;
   align-items: center;
-  height: 56px;
 }
 .bar .title{
   top: auto;
