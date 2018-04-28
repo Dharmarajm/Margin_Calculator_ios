@@ -8,6 +8,7 @@ angular.module('Register', [])
       var device = $cordovaDevice.getDevice();
       $scope.uuid = device.uuid;
       console.log(device,$scope.uuid);
+      $scope.$apply();
  });
   
   $scope.user = {
