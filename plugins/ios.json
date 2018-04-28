@@ -10,9 +10,6 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
         },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
-        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
         },
@@ -24,7 +21,20 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
+        }
+    }
 }
