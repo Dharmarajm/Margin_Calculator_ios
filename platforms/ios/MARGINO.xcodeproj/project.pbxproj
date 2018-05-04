@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		115C4F538CDA44C5AAD4A3AE /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CA611CE11F32486590443AD6 /* CDVViewController+SplashScreen.m */; };
@@ -26,6 +25,20 @@
 		BDEE59E45E7843B68482BB21 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D747FD9D6A344D528BAE9B56 /* CDVDevice.m */; };
 		C15408656F474E09BA2EC52A /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA995A21A6244BFBE989AF1 /* CDVStatusBar.m */; };
 		C3FD787F7E8A4EFA91C8AE01 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 566FAD0BA52D4F5EA035CA58 /* IonicKeyboard.m */; };
+		05DC33DF173A4EA8ADD302FC /* HockeyApp.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C048D9F9A48F8A4F41D56 /* HockeyApp.m */; };
+		4C113C34A7B849E3988475B3 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD300424BDC54295BB0B5688 /* HockeySDKResources.bundle */; };
+		A891DB68FB214230A6E36020 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3210647394CB49EEBB0675C3 /* HockeySDK.framework */; };
+		E0410B9038214F3F8D15348E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4078E2131C9D4E0DA1666456 /* libstdc++.dylib */; };
+		8C295C8501BF417CA50ACBF2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB77F0117284B96BF9466DA /* libc++.dylib */; };
+		34805C5017F041EE9B3DFD4B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5367722CE0E2437390D27CC3 /* CoreText.framework */; };
+		3A3D8F075AD14C71AB94EE06 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38689112D42D436F862CFBF4 /* CoreTelephony.framework */; };
+		A51D095CDD464E698045C93E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7B8D0D1AB5493787F2D257 /* Foundation.framework */; };
+		D1A13FBB1B104F3888101BC0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7999CB51CB784A949437DBBC /* Photos.framework */; };
+		0D6E6572D2084D7780AD04F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BAF790A33A4F4CAAF37B68 /* QuartzCore.framework */; };
+		1F7D8673B0DF41FBA041C154 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F133665121412E9F44DC31 /* QuickLook.framework */; };
+		EB5A2D4F4A28477B91B65833 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70955B09FAF14533A53997BC /* Security.framework */; };
+		A22F3E34DF1C4ED8B8B7265F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB7D075401E4F5E80DD50A6 /* SystemConfiguration.framework */; };
+		12F68869089A4F73B3B87E27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66A3DC653A440DA832D7EC5 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +100,21 @@
 		F293C273F5E1424FAB77F64E /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F5639DCD5F094212AF965EBF /* IonicKeyboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicKeyboard.h; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = MARGINO/config.xml; sourceTree = "<group>"; };
+		CC1C048D9F9A48F8A4F41D56 /* HockeyApp.m */ = {isa = PBXFileReference; name = "HockeyApp.m"; path = "cordova-plugin-hockeyapp/HockeyApp.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		44DA048E9426433FA6AED6B2 /* HockeyApp.h */ = {isa = PBXFileReference; name = "HockeyApp.h"; path = "cordova-plugin-hockeyapp/HockeyApp.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		DD300424BDC54295BB0B5688 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; name = "HockeySDKResources.bundle"; path = "HockeySDKResources.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		3210647394CB49EEBB0675C3 /* HockeySDK.framework */ = {isa = PBXFileReference; name = "HockeySDK.framework"; path = "MARGINO/Plugins/cordova-plugin-hockeyapp/HockeySDK.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4078E2131C9D4E0DA1666456 /* libstdc++.dylib */ = {isa = PBXFileReference; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		DFB77F0117284B96BF9466DA /* libc++.dylib */ = {isa = PBXFileReference; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		5367722CE0E2437390D27CC3 /* CoreText.framework */ = {isa = PBXFileReference; name = "CoreText.framework"; path = "System/Library/Frameworks/CoreText.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		38689112D42D436F862CFBF4 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		9D7B8D0D1AB5493787F2D257 /* Foundation.framework */ = {isa = PBXFileReference; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		7999CB51CB784A949437DBBC /* Photos.framework */ = {isa = PBXFileReference; name = "Photos.framework"; path = "System/Library/Frameworks/Photos.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		62BAF790A33A4F4CAAF37B68 /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		78F133665121412E9F44DC31 /* QuickLook.framework */ = {isa = PBXFileReference; name = "QuickLook.framework"; path = "System/Library/Frameworks/QuickLook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		70955B09FAF14533A53997BC /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		BCB7D075401E4F5E80DD50A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		F66A3DC653A440DA832D7EC5 /* UIKit.framework */ = {isa = PBXFileReference; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +126,18 @@
 				B9058479800A499F83FA30F5 /* libz.tbd in Frameworks */,
 				1E107A0879C6468982FCB3C5 /* Social.framework in Frameworks */,
 				5961F57FE0A04CCA82D6F989 /* MessageUI.framework in Frameworks */,
+				A891DB68FB214230A6E36020 /* HockeySDK.framework in Frameworks */,
+				E0410B9038214F3F8D15348E /* libstdc++.dylib in Frameworks */,
+				8C295C8501BF417CA50ACBF2 /* libc++.dylib in Frameworks */,
+				34805C5017F041EE9B3DFD4B /* CoreText.framework in Frameworks */,
+				3A3D8F075AD14C71AB94EE06 /* CoreTelephony.framework in Frameworks */,
+				A51D095CDD464E698045C93E /* Foundation.framework in Frameworks */,
+				D1A13FBB1B104F3888101BC0 /* Photos.framework in Frameworks */,
+				0D6E6572D2084D7780AD04F2 /* QuartzCore.framework in Frameworks */,
+				1F7D8673B0DF41FBA041C154 /* QuickLook.framework in Frameworks */,
+				EB5A2D4F4A28477B91B65833 /* Security.framework in Frameworks */,
+				A22F3E34DF1C4ED8B8B7265F /* SystemConfiguration.framework in Frameworks */,
+				12F68869089A4F73B3B87E27 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +200,7 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* MARGINO-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				DD300424BDC54295BB0B5688 /* HockeySDKResources.bundle */,
 			);
 			name = Resources;
 			path = MARGINO/Resources;
@@ -171,6 +212,18 @@
 				F293C273F5E1424FAB77F64E /* libz.tbd */,
 				B3F52442D0FC4F57AD813960 /* Social.framework */,
 				0BC189379A4240638392C3C2 /* MessageUI.framework */,
+				3210647394CB49EEBB0675C3 /* HockeySDK.framework */,
+				4078E2131C9D4E0DA1666456 /* libstdc++.dylib */,
+				DFB77F0117284B96BF9466DA /* libc++.dylib */,
+				5367722CE0E2437390D27CC3 /* CoreText.framework */,
+				38689112D42D436F862CFBF4 /* CoreTelephony.framework */,
+				9D7B8D0D1AB5493787F2D257 /* Foundation.framework */,
+				7999CB51CB784A949437DBBC /* Photos.framework */,
+				62BAF790A33A4F4CAAF37B68 /* QuartzCore.framework */,
+				78F133665121412E9F44DC31 /* QuickLook.framework */,
+				70955B09FAF14533A53997BC /* Security.framework */,
+				BCB7D075401E4F5E80DD50A6 /* SystemConfiguration.framework */,
+				F66A3DC653A440DA832D7EC5 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,6 +267,8 @@
 				6CC9F7CD75D74CBFB587E061 /* SocialSharing.h */,
 				8A8604AC493749C6BEA4564F /* CDVInAppBrowser.m */,
 				A32870103EC34865B5543BED /* CDVInAppBrowser.h */,
+				CC1C048D9F9A48F8A4F41D56 /* HockeyApp.m */,
+				44DA048E9426433FA6AED6B2 /* HockeyApp.h */,
 			);
 			name = Plugins;
 			path = MARGINO/Plugins;
@@ -304,6 +359,7 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				4C113C34A7B849E3988475B3 /* HockeySDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +400,7 @@
 				80998E14A5DA4741B81DF4CB /* NSString+SSURLEncoding.m in Sources */,
 				305395BF47204017810873DA /* SocialSharing.m in Sources */,
 				155DCDAB68B24222A798EF99 /* CDVInAppBrowser.m in Sources */,
+				05DC33DF173A4EA8ADD302FC /* HockeyApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +443,10 @@
 				PROVISIONING_PROFILE = "9574170d-35f5-4f85-8c33-58664c77aff6";
 				PROVISIONING_PROFILE_SPECIFIER = MarginAdhoc;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"MARGINO/Plugins/cordova-plugin-hockeyapp\"",
+				);
 			};
 			name = Debug;
 		};
@@ -415,6 +476,10 @@
 				PROVISIONING_PROFILE = "9574170d-35f5-4f85-8c33-58664c77aff6";
 				PROVISIONING_PROFILE_SPECIFIER = MarginAdhoc;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"MARGINO/Plugins/cordova-plugin-hockeyapp\"",
+				);
 			};
 			name = Release;
 		};

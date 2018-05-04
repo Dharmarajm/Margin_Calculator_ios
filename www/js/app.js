@@ -28,6 +28,18 @@ angular.module('starter', ['ionic',
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
+   document.addEventListener("deviceready", function() {
+    hockeyapp.start(success, error, "c1c9ddd9f4584d758b587feba6f47c66");
+    
+    function error(error) {
+     console.log(error);
+    }
+    
+    function success(status) {
+     console.log(status);
+    }
+    
+   }, false);
   });
 
   $ionicPlatform.registerBackButtonAction(function(e) {

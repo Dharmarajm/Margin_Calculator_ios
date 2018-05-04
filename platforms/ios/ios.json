@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"HockeyApp\"><param name=\"ios-package\" value=\"HockeyApp\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -52,6 +56,12 @@
                     "NSPhotoLibraryAddUsageDescription": [
                         {
                             "xml": "<string>This app requires photo library access to function properly.</string>",
+                            "count": 1
+                        }
+                    ],
+                    "NSPhotoLibraryUsageDescription": [
+                        {
+                            "xml": "<string>This app needs access to your Photo Library to include a screenshot with user feedback.</string>",
                             "count": 1
                         }
                     ]
@@ -85,6 +95,9 @@
             "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
         },
         "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
+        },
+        "cordova-plugin-hockeyapp": {
             "PACKAGE_NAME": "com.ionicframework.margincalculator917148"
         }
     },
@@ -161,6 +174,15 @@
                 "cordova.InAppBrowser.open",
                 "window.open"
             ]
+        },
+        {
+            "id": "cordova-plugin-hockeyapp.HockeyApp",
+            "file": "plugins/cordova-plugin-hockeyapp/www/hockeyapp.js",
+            "pluginId": "cordova-plugin-hockeyapp",
+            "clobbers": [
+                "hockeyapp",
+                "hockeyApp"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -172,6 +194,7 @@
         "cordova-plugin-device": "1.1.7",
         "es6-promise-plugin": "4.2.2",
         "cordova-plugin-x-socialsharing": "5.4.0",
-        "cordova-plugin-inappbrowser": "3.0.0"
+        "cordova-plugin-inappbrowser": "3.0.0",
+        "cordova-plugin-hockeyapp": "5.1.2"
     }
 }

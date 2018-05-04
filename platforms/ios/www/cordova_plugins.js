@@ -71,6 +71,15 @@ module.exports = [
             "cordova.InAppBrowser.open",
             "window.open"
         ]
+    },
+    {
+        "id": "cordova-plugin-hockeyapp.HockeyApp",
+        "file": "plugins/cordova-plugin-hockeyapp/www/hockeyapp.js",
+        "pluginId": "cordova-plugin-hockeyapp",
+        "clobbers": [
+            "hockeyapp",
+            "hockeyApp"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -84,7 +93,8 @@ module.exports.metadata =
     "cordova-plugin-device": "1.1.7",
     "es6-promise-plugin": "4.2.2",
     "cordova-plugin-x-socialsharing": "5.4.0",
-    "cordova-plugin-inappbrowser": "3.0.0"
+    "cordova-plugin-inappbrowser": "3.0.0",
+    "cordova-plugin-hockeyapp": "5.1.2"
 };
 // BOTTOM OF METADATA
 });
