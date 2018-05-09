@@ -1,54 +1,74 @@
 angular.module('Register', [])
 
-.controller('RegisterCtrl', function($ionicPlatform,$scope, $state, $http, $rootScope,$ionicPopup,$cordovaDevice) {
+.controller('RegisterCtrl', function($scope, $state, $http, $rootScope,$ionicPlatform,$cordovaDevice,$ionicPopup,$ionicLoading,$timeout) {
 
 
- //  $ionicPlatform.ready(function() {
+  /*$ionicPlatform.ready(function() {
+    
+      var device = $cordovaDevice.getDevice();
+      $scope.uuid = device.uuid;
+      $scope.$apply();
+  });*/
+
+  document.addEventListener("deviceready", function () {
+
+    var device = $cordovaDevice.getDevice();
+
+    $scope.uuid = $cordovaDevice.getUUID();
+
+  }, false);
   
- //      var device = $cordovaDevice.getDevice();
- //      $scope.uuid = device.uuid;
- //      console.log(device,$scope.uuid);
- //      $scope.$apply();
- // });
   
-  $scope.user = {
+  $scope.reg = {
     email: '',
     active: '',
     password: '',
     confirm_password: ''
   }
-  
 
- /* alert($cordovaDevice.getUUID());
-  console.log($cordovaDevice.getUUID())*/
+ /* $scope.uuid="1234"*/
  
   $scope.register = function() {
-    if ($scope.user.password != $scope.user.confirm_password) {
-      var registeralert = $ionicPopup.alert({
-        title: 'Margino',
-        template: 'Password does not matching'
-      })
+    if ($scope.reg.password != $scope.reg.confirm_password) {
+        var alertPopup = $ionicPopup.alert({
+          title: "MARIGINO",
+          content: "Passwords do not match"
+        })  
     } else {
+      $ionicLoading.show({
+       content: 'Loading',
+       animation: 'fade-in',
+       showBackdrop: true,
+       maxWidth: 200,
+       showDelay: 0
+      });
+
       var data = {
-        "email": $scope.user.email,
-        "activation_code": $scope.user.active,
-        "password": $scope.user.password,
-        "device_id":'3EC5DA3E-A50C-4FCB-AB7E-EC6ACDEBB624'
+        "email": $scope.reg.email,
+        "activation_code": $scope.reg.active,
+        "password": $scope.reg.password,
+        "device_id": $scope.uuid
       };
-      console.log(data)
       $http({
         method: 'post',
         url: CommonURL + '/recruiters/recuriter_register',
         data: data
       }).then(function(response) {
+        $timeout(function() {
+         $ionicLoading.hide();
+        });
         if(response.data.data != 'Invalid User') {
+          $scope.reg.email="";
+          $scope.reg.active="";
+          $scope.reg.password="";
+          $scope.reg.confirm_password="";
           localStorage.setItem("user", 0)
           $state.go('login');
         } else {
-          var registerInvalert = $ionicPopup.alert({
-           title: 'Margino',
-           template: 'Your Email id or Activation code is invalid'
-          })
+          var alertPopup = $ionicPopup.alert({
+          title: "MARGINO",
+          content: "Invalid details"
+        })  
         }
 
 
@@ -80,10 +100,10 @@ angular.module('Register', [])
         localStorage.setItem("user", 0)
         $state.go('login');
       } else {
-        var confirmalert = $ionicPopup.alert({
-          title: 'Margino',
-          template: 'Old password is wrong'
-        })
+        var alertPopup = $ionicPopup.alert({
+          title: "MARGINO",
+          content: "Invalid password "
+        })  
       }
     })
   }

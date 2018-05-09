@@ -18,7 +18,8 @@ angular.module('Register', [])
 
   }, false);
   
-  $scope.user = {
+  
+  $scope.reg = {
     email: '',
     active: '',
     password: '',
@@ -28,7 +29,7 @@ angular.module('Register', [])
  /* $scope.uuid="1234"*/
  
   $scope.register = function() {
-    if ($scope.user.password != $scope.user.confirm_password) {
+    if ($scope.reg.password != $scope.reg.confirm_password) {
         var alertPopup = $ionicPopup.alert({
           title: "MARIGINO",
           content: "Passwords do not match"
@@ -43,9 +44,9 @@ angular.module('Register', [])
       });
 
       var data = {
-        "email": $scope.user.email,
-        "activation_code": $scope.user.active,
-        "password": $scope.user.password,
+        "email": $scope.reg.email,
+        "activation_code": $scope.reg.active,
+        "password": $scope.reg.password,
         "device_id": $scope.uuid
       };
       $http({
@@ -57,6 +58,10 @@ angular.module('Register', [])
          $ionicLoading.hide();
         });
         if(response.data.data != 'Invalid User') {
+          $scope.reg.email="";
+          $scope.reg.active="";
+          $scope.reg.password="";
+          $scope.reg.confirm_password="";
           localStorage.setItem("user", 0)
           $state.go('login');
         } else {

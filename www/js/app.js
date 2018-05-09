@@ -16,7 +16,8 @@ angular.module('starter', ['ionic',
   'Pto',
   'Misc',
   'Insurance',
-  'Summary'
+  'Summary',
+  'ng-walkthrough'
 ])
 
 .run(function($ionicPlatform,$state,$ionicPopup) {

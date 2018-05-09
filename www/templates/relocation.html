@@ -27,7 +27,7 @@
     
     <div class="row group-center">
       <div class="col col-50">
-        <h3><strong>${{relocation.relocation}}</strong></h3>
+        <h3><strong><span>$</span>{{relocation.relocation}}</strong></h3>
       </div>
       <div class="col col-50">
 <!--         <h3>$<strong editable-text="sliderRelocation.min"  ng-blur="relocation(sliderRelocation.min)" ng-model="sliderRelocation.min" ng-change="ss()"></strong></h3>        
@@ -35,7 +35,7 @@
       
         <div class="input-group">
           <span class="textvalues">$</span>
-          <input class="textvalues" type="number" id="reloaction_id" ng-model="sliderRelocation.min" max="relocation.relocation" ng-blur="relocations(sliderRelocation.min)">          
+          <input class="textvalues" type="number" id="reloaction_id" ng-model="sliderRelocation.min" max="{{relocation.relocation}}" ng-blur="relocations(sliderRelocation.min)">          
         </div>
 
       </div>
@@ -43,7 +43,7 @@
 
     <br>
     <div class="row group1">
-      <rzslider rz-slider-model="sliderRelocation.min" rz-slider-high="sliderRelocation.max" id="relocationSlider" rz-slider-options="sliderRelocation"></rzslider>
+      <rzslider rz-slider-model="sliderRelocation.min" id="relocationSlider" rz-slider-options="sliderRelocation"></rzslider>
         </rzslider>
     </div>
 
@@ -55,12 +55,12 @@
   </ion-content>
 
    <div class="bar bar-footer" ng-controller="LoginCtrl">
-    <div class="row">
-      <div class="col col-40 footer-title">
-        Adj. Rate:<span>${{adjRate | number:2 }}</span>
+    <div class="row" style="justify-content: space-between;">
+      <div class="footer-title">
+        Adj.Rate:<span>${{adjRate | number:2 }}</span>
       </div>
-      <div class="col col-60 footer-title1">
-        Margin:<span>${{marginDollar| number:2 }}&nbsp;|&nbsp;{{marginPercentage | number:2 }}%</span>
+      <div class="footer-title1">
+        Margin:<span>${{marginDollar | number:2 }}&nbsp;|&nbsp;{{marginPercentage | number:2 }}%</span>
       </div>
     </div>
   </div>

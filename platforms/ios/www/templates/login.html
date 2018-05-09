@@ -1,4 +1,4 @@
-<ion-view cache-view="false" hide-nav-bar="true" ng-cloak>
+<ion-view cache-view="false" hide-nav-bar="true" >
   <ion-content class="ion-content">
     <div class="logo">
       <img src="img/logo.png" style="width:100%">
@@ -11,7 +11,7 @@
     <form name="log">
 
       <div class="group">
-        <input class="inputMaterial" id="email" type="text"  ng-model="user.email" required>
+        <input class="inputMaterial lower" id="email" type="text"  ng-model="user.email" required>
         <span class="highlight"></span>
         <div class="label">Email&nbsp;id</div>
       </div>
@@ -23,15 +23,13 @@
       </div>
 
       <div class="group1">
-        <button class="button button-block button-purple" id="login-button" ng-click='login()'> SIGN IN
-        </button>
-        <!-- <button class="button button-block button-purple" ng-disabled="log.$invalid" ng-click='login()'> SIGN IN
+        <!-- <button class="button button-block button-purple" id="login-button" ng-click='login()'> SIGN IN
         </button> -->
+        <button class="button button-block button-purple" ng-disabled="log.$invalid" ng-click='login()'> SIGN IN
+        </button>
       </div>
 
       <p class="forgot_pw" ng-click="forgot()">FORGOT PASSWORD?</p>
-
-      <p>{{uuid}}</p>
 
     </form>
   </ion-content>

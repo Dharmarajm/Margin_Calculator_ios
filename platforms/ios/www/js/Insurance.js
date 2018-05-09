@@ -1,16 +1,44 @@
 angular.module('Insurance', [])
 
-.controller('InsuranceCtrl', function($scope,$state,$http,$rootScope,$timeout,$ionicPopup) {
+.controller('InsuranceCtrl', function($scope,$state,$http,$rootScope,$ionicLoading,$timeout) {
+
+
+    if($rootScope.candidatename == "Consultant Name" ||  $rootScope.candidatename == undefined || $rootScope.candidatename == null || $rootScope.candidatename == ""){  
+      $rootScope.candidatename="Consultant Name"; 
+    }
+    else{
+      $rootScope.candidatename=$rootScope.candidatename;
+    }
+
+    $rootScope.Coachmark_id=2;
+   localStorage.setItem("coachmark",$rootScope.Coachmark_id);  
+       
+
+
 	$scope.medical = $rootScope.OverAllData[0].medical_employer;
 	$scope.dental = $rootScope.OverAllData[0].dental_employer;
 
 	$scope.medicalButton=function(medical,name){
-	  $rootScope.medicalvalue=medical;
-    $rootScope.medicalname=name;
-    $rootScope.doRefresh();
+	 /*$ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+     });*/
+     $rootScope.medicalvalue=medical;
+     $rootScope.medicalname=name;
+     $rootScope.doRefresh();
 	}
 
   $scope.dentalButton=function(dental,name){
+    /*$ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+     });*/
     $rootScope.dentalvalue=dental;    
     $rootScope.dentalname=name;
     $rootScope.doRefresh();   

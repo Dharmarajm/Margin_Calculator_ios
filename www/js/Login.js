@@ -9,13 +9,10 @@ angular.module('Login', [])
       $scope.$apply();
   });*/
 
-   document.addEventListener("deviceready", function () {
-
+  document.addEventListener("deviceready", function () {
     var device = $cordovaDevice.getDevice();
-
     $scope.uuid = $cordovaDevice.getUUID();
-
-   }, false);
+  }, false);
 
   /*$scope.uuid="1234"*/
 
@@ -49,15 +46,33 @@ angular.module('Login', [])
       $timeout(function() {
         $ionicLoading.hide();
       });
-      if(response.data != false){
-        $rootScope.company_Details=response.data.company;
-        $rootScope.recruiters_Details=response.data.recruiter;
-        $state.go('dashboard');
-      }else if (response.data.login == 'Disable'){
+      if (response.data.login == 'Disable'){
         var alertPopup = $ionicPopup.alert({
           title: "MARGINO",
           content: "Please contact your employer to activate your account"
         })  
+      }else if(response.data != false){
+        $rootScope.company_Details=response.data.company;
+        $rootScope.recruiters_Details=response.data.recruiter;
+        $state.go('dashboard');
+                 if($rootScope.active == true){
+                        $rootScope.active=true;
+                        $rootScope.check_values='true';
+                        localStorage.setItem("checkbox",$rootScope.check_values);      
+                        $rootScope.Coachmark_id=2;
+                        localStorage.setItem("coachmark",$rootScope.Coachmark_id);      
+                  }else if($rootScope.active == false){
+                        $rootScope.active=false;
+                        $rootScope.check_values='all';
+                        localStorage.setItem("checkbox",$rootScope.check_values);
+                        $scope.demoActive1 = true;      
+                        $rootScope.Coachmark_id=1;
+                        localStorage.setItem("coachmark",$rootScope.Coachmark_id);      
+                  }else{          
+                        $scope.demoActive1 = true;      
+                        $rootScope.Coachmark_id=1;
+                        localStorage.setItem("coachmark",$rootScope.Coachmark_id);           
+                  }
       }
       else{
         var alertPopup = $ionicPopup.alert({
@@ -138,11 +153,17 @@ angular.module('Login', [])
                 onTap : function() {
                   //localStorage.clear();
                   $rootScope.SalaryValue="";
-                  $rootScope.cons.bill_rate="";
-                  $rootScope.cons.client_fee="";
+                  if($rootScope.cons==undefined){
+                    $rootScope.cons="";
+                  }else{
+                    $rootScope.cons.bill_rate="";
+                    $rootScope.cons.client_fee="";  
+                  }
                   $rootScope.consultant == null;
                   $rootScope.candidatename=null;
                   $rootScope.ptoHrs="";
+                  $rootScope.ptovalue="";
+                  $rootScope.ptoname=null;
                   $rootScope.relocation_value="";
                   $rootScope.reLocationValue="";
                   $rootScope.medicalvalue="";
@@ -164,6 +185,9 @@ angular.module('Login', [])
                   $rootScope.misc=null;
                   $rootScope.salaryText=null;
                   $rootScope.perdiemText=null;
+                  $rootScope.billrateText=null;
+                  $rootScope.salaryhract = "Dollar";
+                  localStorage.removeItem('Item')
                   $rootScope.lcamin="";
                   $rootScope.locationval="";
                   $rootScope.otherDays=0;
@@ -175,6 +199,26 @@ angular.module('Login', [])
                   $rootScope.relocation_notes="";
                   $rootScope.miscdata="";
 
+
+                  if($rootScope.active == true){
+                        $rootScope.active=true;
+                        $rootScope.check_values='true';
+                        localStorage.setItem("checkbox",$rootScope.check_values);      
+                        $rootScope.Coachmark_id=2;
+                        localStorage.setItem("coachmark",$rootScope.Coachmark_id);      
+                  }else if($rootScope.active == false){
+                        $rootScope.active=false;
+                        $rootScope.check_values='all';
+                        localStorage.setItem("checkbox",$rootScope.check_values);
+                        $scope.demoActive1 = true;      
+                        $rootScope.Coachmark_id=1;
+                        localStorage.setItem("coachmark",$rootScope.Coachmark_id);      
+                  }else{          
+                        $scope.demoActive1 = true;      
+                        $rootScope.Coachmark_id=1;
+                        localStorage.setItem("coachmark",$rootScope.Coachmark_id);           
+                  }
+
                   $state.go('login');                             
                 }
             }]
@@ -183,7 +227,7 @@ angular.module('Login', [])
 
 })
 
-.controller('forgotCtrl',function($state,$http,$rootScope,$scope){
+.controller('forgotCtrl',function($state,$http,$rootScope,$scope,$ionicLoading,$timeout){
   $scope.forget={mail_id:$rootScope.new_mail,password:''}
   $scope.save=function(){
     $ionicLoading.show({
