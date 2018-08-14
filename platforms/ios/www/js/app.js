@@ -29,18 +29,6 @@ angular.module('starter', ['ionic',
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
-   document.addEventListener("deviceready", function() {
-    hockeyapp.start(success, error, "c1c9ddd9f4584d758b587feba6f47c66");
-    
-    function error(error) {
-     console.log(error);
-    }
-    
-    function success(status) {
-     console.log(status);
-    }
-    
-   }, false);
   });
 
   $ionicPlatform.registerBackButtonAction(function(e) {
@@ -265,5 +253,7 @@ angular.module('starter', ['ionic',
   };
 })
 /*This is using common Url  this variable using all http method*/
-//var CommonURL = "http://192.168.1.72:4001/api/v1";
-var CommonURL = "http://115.111.129.98:4001/api/v1";
+//var CommonURL = "http://192.168.1.72:4011/api/v1";
+//var CommonURL = "http://115.111.129.98:4001/api/v1";
+ var CommonURL="https://www.margino.biz/api/v1";
+

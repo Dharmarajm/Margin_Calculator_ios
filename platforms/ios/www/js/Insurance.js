@@ -14,10 +14,32 @@ angular.module('Insurance', [])
    localStorage.setItem("coachmark",$rootScope.Coachmark_id);  
        
 
+   if($rootScope.OverAllData[0].medical_employer== null || $rootScope.OverAllData[0].medical_employer == undefined || $rootScope.OverAllData[0].medical_employer == ""){
+     $scope.medical= {single:0,couple:0,family:0,eandc:0}
+   }
+   else{
+    $scope.medical = $rootScope.OverAllData[0].medical_employer;
+   }
 
-	$scope.medical = $rootScope.OverAllData[0].medical_employer;
-	$scope.dental = $rootScope.OverAllData[0].dental_employer;
-
+   if($rootScope.OverAllData[0].dental_employer == null || $rootScope.OverAllData[0].dental_employer == undefined || $rootScope.OverAllData[0].dental_employer ==""){
+     $scope.dental={single:0,couple:0,family:0,eandc:0}
+   }
+   else{
+    $scope.dental = $rootScope.OverAllData[0].dental_employer;
+   }
+	
+  if($rootScope.medicalname == null || $rootScope.medicalname ==undefined){
+    $scope.med_emp_contribution=0;
+  }
+  else{
+    $scope.med_emp_contribution=$rootScope.OverAllData[0].medical_employee[$rootScope.medicalname]
+  }
+  if($rootScope.dentalname == null || $rootScope.dentalname == undefined){
+    $scope.den_emp_contribution=0
+  }
+  else{
+    $scope.den_emp_contribution=$rootScope.OverAllData[0].medical_employee[$rootScope.dentalname]
+  }
 	$scope.medicalButton=function(medical,name){
 	 /*$ionicLoading.show({
         content: 'Loading',
@@ -28,6 +50,7 @@ angular.module('Insurance', [])
      });*/
      $rootScope.medicalvalue=medical;
      $rootScope.medicalname=name;
+     $scope.med_emp_contribution=$rootScope.OverAllData[0].medical_employee[$rootScope.medicalname]
      $rootScope.doRefresh();
 	}
 
@@ -39,8 +62,9 @@ angular.module('Insurance', [])
         maxWidth: 200,
         showDelay: 0
      });*/
-    $rootScope.dentalvalue=dental;    
+    $rootScope.dentalvalue=dental;  
     $rootScope.dentalname=name;
+    $scope.den_emp_contribution=$rootScope.OverAllData[0].medical_employee[$rootScope.dentalname]
     $rootScope.doRefresh();   
   }
 

@@ -83,6 +83,14 @@ angular.module('Login', [])
         $scope.user.password="";
       }
       
+    },function(error){
+        $timeout(function() {
+         $ionicLoading.hide();
+        });
+        $scope.alert1=$ionicPopup.alert({
+          title: 'MARGINO',
+          template: '<center>Failed to connect Server</center>'
+        })
     })
 
   }
@@ -134,6 +142,14 @@ angular.module('Login', [])
           
         }
         
+      },function(error){
+        $timeout(function() {
+         $ionicLoading.hide();
+        });
+        $scope.alert2=$ionicPopup.alert({
+          title: 'MARGINO',
+          template: '<center>Failed to connect Server</center>'
+        })
       })
     }
   }
@@ -162,6 +178,7 @@ angular.module('Login', [])
                   $rootScope.consultant == null;
                   $rootScope.candidatename=null;
                   $rootScope.ptoHrs="";
+                  $rootScope.active_values="Standard"
                   $rootScope.ptovalue="";
                   $rootScope.ptoname=null;
                   $rootScope.relocation_value="";
@@ -187,7 +204,8 @@ angular.module('Login', [])
                   $rootScope.perdiemText=null;
                   $rootScope.billrateText=null;
                   $rootScope.salaryhract = "Dollar";
-                  localStorage.removeItem('Item')
+                  localStorage.removeItem('Item');
+                  localStorage.removeItem('pto');
                   $rootScope.lcamin="";
                   $rootScope.locationval="";
                   $rootScope.otherDays=0;
@@ -227,7 +245,7 @@ angular.module('Login', [])
 
 })
 
-.controller('forgotCtrl',function($state,$http,$rootScope,$scope,$ionicLoading,$timeout){
+.controller('forgotCtrl',function($state,$http,$rootScope,$scope,$ionicLoading,$timeout,$ionicPopup){
   $scope.forget={mail_id:$rootScope.new_mail,password:''}
   $scope.save=function(){
     $ionicLoading.show({
@@ -252,6 +270,14 @@ angular.module('Login', [])
         $ionicLoading.hide();
       });
       $state.go("login")
+    },function(error){
+        $timeout(function() {
+         $ionicLoading.hide();
+        });
+        $scope.alert3=$ionicPopup.alert({
+          title: 'MARGINO',
+          template: '<center>Failed to connect Server</center>'
+        })
     })
   }
 })

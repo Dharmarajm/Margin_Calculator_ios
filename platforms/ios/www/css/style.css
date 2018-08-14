@@ -32,12 +32,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
 
 .tabs-top > .tabs, .tabs.tabs-top {
     background: #e7ecf7;
-    top: 56px;
+    top: 84px !important;
 }
 
 .tab-item-active,.tab-item-active.activated, .tabs-top.tabs-striped .tab-item.tab-item-active{
-  background-color: #5153a3 !important;
-  border:1px solid #404390 !important;
+  background-color: none !important;
+  border:0px solid #404390 !important;
   margin: 0px 4px !important;
 }
 
@@ -48,11 +48,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   margin: -1px auto;
 }
 .tab-item,.tab-item.activated,.tabs-top.tabs-striped .tab-item,.tabs-top.tabs-striped .tab-item.activated{
-  background-color: #fff;
-  border-width: 1px !important;
+  background-color: none;
+  border-width: 0px !important;
   border:solid #c5cad5;
   border-radius: 50%;
-  height: 40px;
+  height: 46px;
   width: auto;
   align-items: center;
   display: flex;
@@ -86,6 +86,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
 	width: 100%;
 	text-align: center;
 	padding: 20px 40px;
+  margin-top: 20px; 
+/*  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);*/
 }
 .start{
   width: 100%;
@@ -172,7 +175,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
 }
 
 .dollar .bill-content{
-    margin-bottom: 10px;
+    margin: 10px 0;
     padding: 0;
 }
 
@@ -353,7 +356,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
 }
 .bar-header{
   border-bottom: 0px;
-  padding: 28px 10px !important;
+  padding: 0px 10px !important;
   align-items: center;
  /* height: 56px;*/
 }
@@ -364,7 +367,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   text-align: center;
 }
 .tab-nav.tabs {
-    padding: 0 14px;
+    padding: 35px 14px !important;
     align-items: center;
     border: none;
     border-width: 1px 0 1px 0;
@@ -377,7 +380,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/user-1.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .user-off{
   background-repeat: no-repeat;
@@ -385,7 +390,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/user-0.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .bill-on{
   background-repeat: no-repeat;
@@ -393,7 +400,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/bill-1.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .bill-off{
   background-repeat: no-repeat;
@@ -401,7 +410,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/bill-0.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .sheild-on{
   background-repeat: no-repeat;
@@ -409,7 +420,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/sheild-1.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .sheild-off{
   background-repeat: no-repeat;
@@ -417,7 +430,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/sheild-0.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .check-on{
   background-repeat: no-repeat;
@@ -425,7 +440,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/check-1.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .check-off{
   background-repeat: no-repeat;
@@ -433,7 +450,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/check-0.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .location-on{
   background-repeat: no-repeat;
@@ -441,7 +460,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/location-1.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .location-off{
   background-repeat: no-repeat;
@@ -449,7 +470,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/location-0.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .wallet-on{
   background-repeat: no-repeat;
@@ -457,7 +480,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/wallet-1.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .wallet-off{
   background-repeat: no-repeat;
@@ -465,7 +490,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/wallet-0.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .calendar-on{
   background-repeat: no-repeat;
@@ -473,7 +500,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/calendar-1.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .calendar-off{
   background-repeat: no-repeat;
@@ -481,11 +510,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   background-position-x: center;
   background-position-y: center;
   background-image: url('../img/calendar-0.png');
-  width: 52%;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
 .consultant-content .inputMaterial {
     width: 100%;
     border-bottom: 1px solid #ababab !important;
+    border-radius: 0px !important;
 }
 .groupText .label {
     color: #383938;
@@ -540,11 +572,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, span, input, button
   margin-bottom: 30px;
 }
 .content-pad.consultant-content{
-    margin-top: 22px;
+    margin-top: 42px;
     padding-top: 20px;
     padding-right: 14px;
     padding-left: 14px;
-    margin-bottom: 58px;
+    margin-bottom: 56px;
 }
 li.item h1{
     font-size: 18px;
@@ -585,32 +617,36 @@ li.item.activated i,li.item.activated h1{
   font-size: 20px;
   font-weight: 500;
 }
+.bar-header.visa{
+  margin-top: 0px !important;
+}
 .visa-status ul{
   margin-top: 72px;
 }
 .consultant-name{
     position: fixed;
-    top: 96px;
+    top: 155px;
     width: 100%;
     text-align: center;
     font-size: 18px;
     font-weight: 400;
-    padding: 5px 10px;
+    padding: 10px !important;
     background-color: #fff;
     border-bottom: 1px solid #d6dbe9;
     color: #5152a3;
     z-index: 1;
+    margin: 0px !important;
 }
 .smry-consultant{
     position: fixed;
-    top: 116px;
+    top: 155px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 22px;
     font-weight: 400;
-    padding: 12px 24px;
+    padding: 12px 24px !important;
     background-color: #fff;
     border-bottom: 1px solid #b2c0da;
     color: #5152a3;
@@ -633,9 +669,10 @@ li.item.activated i,li.item.activated h1{
     font-weight: 400;
     color: #5153a3;
 }
-.smry-content{
-  margin-top: 88px !important;
-  margin-bottom: 0px !important;
+.content-view.smry-content{
+  top: 220px !important;
+  bottom: 0px !important;
+  margin: 0px !important;
 }
 .smry-table tr:nth-child(even){
   background-color: #f2f2f3;
@@ -658,9 +695,12 @@ li.item.activated i,li.item.activated h1{
   margin: 20px 0;
 }
 .content-view {
-    margin-top: 54px;
-    margin-bottom: 56px;
+/*    margin-top: 84px;
+    margin-bottom: 56px;*/
     padding: 0 14px;
+    bottom: calc(env(safe-area-inset-bottom) + 57px);
+    bottom: 56px;
+    top: 198px !important;
 }
 .pot-content .button-bar{
     padding: 20px 50px;
@@ -773,7 +813,7 @@ a.button.button-block.button-circle {
 }
 .per-diem{
     margin-top: 30px;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 .per-diem p{
   text-align: center;
@@ -854,8 +894,9 @@ a.button.button-block.button-circle {
     height: auto;
 }
 .bar .title + .buttons {
-    top: auto;
+    margin-top: 2px;
     bottom: 6px;
+    align-items: center;
 }
 
 .social{
@@ -1053,4 +1094,57 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .pad-0{
   padding: 0;
+}
+
+/*ion-side-menus.view {
+  margin-top: 22px;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs, .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top {
+  top: 56px;
+}*/
+
+/*new*/
+
+body{
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+}
+
+.bar-footer .row{
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+}
+
+.bar-header{
+  margin-top: 20px; 
+  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
+}
+.safearea{
+  margin-top: 20px; 
+  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
+}
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+  height: calc(44px + constant(safe-area-inset-top));
+  height: calc(env(safe-area-inset-top) + 44px);
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+  margin-top: 0 !important;
+}
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"]{
+  background-color: transparent;
+}
+.backdrop{
+  top: env(safe-area-inset-top) !important;
+}
+.loading-container{
+  top: env(safe-area-inset-top) !important;
+}
+.popup-container{
+  top: env(safe-area-inset-top) !important;
+}
+.walkthrough-background{
+  top: env(safe-area-inset-top) !important;
 }

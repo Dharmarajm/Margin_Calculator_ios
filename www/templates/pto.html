@@ -1,13 +1,18 @@
-<ion-view cache-view="false" ng-cloak>
+<ion-view cache-view="false">
   <ion-nav-title>
     <span class="bar-stable"><strong class="header-title">PTO</strong></span>
   </ion-nav-title>
 
 
   <h1 class="consultant-name">{{candidatename}}</h1>
-  <ion-content class="ion-content content-view pot-content " ng-class="{'animate-in-primary': data == 'swiperight' , 'animate-in-secondary': data == 'swipeleft' }">
+  <ion-content class="ion-content content-view pot-content" ng-class="{'animate-in-primary': data == 'swiperight' , 'animate-in-secondary': data == 'swipeleft' }">
     
     <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher> -->
+   
+    <div class="row bill-content" ng-show="ptoMsg">
+      <br>
+      <p>{{ptoMsg}}</p>
+    </div>
 
     <div class="button-bar">
       <a class="button button-block" id="pto_std" ng-class="{'button-circle': standard == true}" ng-click="standarButton()">Standard</a>
@@ -17,17 +22,17 @@
     <div ng-show="standard">
       <div class="row group-center">
         <div class="col col-50 col-50-align line">
-          <label>HOURS</label>
-          <h2>{{pto.hours}}</h2>
+          <label>DAYS</label>
+          <h2>{{pto.days || 0 }}</h2>
         </div>
         <div class="col col-50 col-50-align">
-          <label>DAYS</label>
-          <h2>{{pto.days}}</h2>
-        </div>
+          <label>HOURS</label>
+          <h2>{{pto.hours || 0 }}</h2>
+        </div>       
       </div>
       <br>
       <div class="row group1 disable">
-        <rzslider rz-slider-model="disableslider.min" id="ptoSlider" rz-slider-options="disableslider">
+        <rzslider rz-slider-model="disableslider.min" rz-slider-options="disableslider">
         </rzslider>
       </div>
     </div>
@@ -35,14 +40,15 @@
     <div ng-show="other">
       <div class="row group-center">
         <div class="col col-50 col-50-align line">
-          <label>HOURS</label>
-          <!-- <h2 editable-text="slider.min" ng-blur="ptohours(slider.min)"></h2> -->
+          <label>DAYS</label>
           <input class="textvalues" type="number" ng-model="slider.min"  max="250" ng-blur="ptohours(slider.min)" style="width:100%">
+          
         </div>
         <div class="col col-50 col-50-align">
-          <label>DAYS</label>
-          <h2>{{otherDays}}</h2>
-        </div>
+          <label>HOURS</label>
+          <!-- <h2 editable-text="slider.min" ng-blur="ptohours(slider.min)"></h2> -->
+          <h2>{{otherHrs}}</h2>
+        </div>        
       </div>
       <br>
       <div class="row group1">
@@ -50,8 +56,17 @@
         </rzslider>
       </div>
     </div>
-   
+
     <div class="chs_pto">
+      <div class="content-header text-center">
+        <p style="font-size: 12px">Selected PTO :{{active_values}}
+          <a ng-show="active_values == 'Standard'">({{pto.days}}/{{pto.hours}})</a> 
+          <a ng-show="active_values == 'Other'">({{slider.min}}/{{otherHrs}})</a>
+        </p>
+      </div>
+    </div>
+   
+  <!--   <div class="chs_pto">
       <div class="content-header text-center">
         <p>Choose PTO</p>
       </div>
@@ -60,13 +75,13 @@
       <div class="row radio">
         <div class="col col-50">
           <label class="container" ng-model="pto.standard" ng-click="ptobutton(pto.standard,'standard')">Standard
-            <input type="radio"  name="radio" id="med_rad_1" ng-checked="checkedstandard">
+            <input type="radio"  name="radio" id="pto_rad_1" ng-checked="checkedstandard">
             <span class="checkmark"></span>
           </label>
         </div>
         <div class="col col-50">
           <label class="container" ng-model="pto.other" ng-click="ptobutton(pto.other,'other')">Other
-            <input type="radio"  name="radio" id="med_rad_2" ng-checked="checkedother">
+            <input type="radio"  name="radio" id="pto_rad_2" ng-checked="checkedother">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -86,15 +101,9 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- <div class="col col-50">
-          <div class="card-border">
-            <p class="pink">{{ptoHrs}}/{{getptoDays}}</p>
-             <h4>{{slider.min}}/{{otherDays}}</h4> 
-          </div>
-        </div> -->
+        </div>      
       </div>
-    </div>
+    </div> -->
 
    <!--  <div class="row radio">
       <div class="col col-50">
@@ -113,15 +122,18 @@
       </div>
     </div> -->
 
+
+
+
   </ion-content>
 
   <div class="bar bar-footer" ng-controller="LoginCtrl">
     <div class="row" style="justify-content: space-between;">
       <div class="footer-title">
-        Adj.Rate:<span>${{adjRate | number:2 }}</span>
+        Adj.Rate:<span>${{(adjRate | number:2) || 0 }}</span>
       </div>
       <div class="footer-title1">
-        Margin:<span>${{marginDollar | number:2 }}&nbsp;|&nbsp;{{marginPercentage | number:2 }}%</span>
+        Margin:<span>${{(marginDollar | number:2) || 0 }}&nbsp;|&nbsp;{{(marginPercentage | number:2) || 0 }}%</span>
       </div>
     </div>
   </div>

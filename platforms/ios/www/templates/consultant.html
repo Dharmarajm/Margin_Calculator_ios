@@ -1,8 +1,8 @@
-<ion-view cache-view="false" ng-cloak>
-  <ion-nav-buttons side="left">
+<ion-view cache-view="false">
+ <!--  <ion-nav-buttons side="left">
     <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
     </button>
-  </ion-nav-buttons>
+  </ion-nav-buttons> -->
   <ion-nav-title>
     <span class="bar-stable"><strong class="header-title">CONSULTANT</strong></span>
   </ion-nav-title>
@@ -78,10 +78,10 @@
   <div class="bar bar-footer" ng-controller="LoginCtrl">
     <div class="row" style="justify-content: space-between;">
       <div class="footer-title">
-        Adj.Rate:<span>${{adjRate | number:2 }}</span>
+        Adj.Rate:<span>${{(adjRate | number:2) || 0 }}</span>
       </div>
       <div class="footer-title1">
-        Margin:<span>${{marginDollar | number:2 }}&nbsp;|&nbsp;{{marginPercentage | number:2 }}%</span>
+        Margin:<span>${{(marginDollar | number:2) || 0 }}&nbsp;|&nbsp;{{(marginPercentage | number:2) || 0 }}%</span>
       </div>
     </div>
   </div>

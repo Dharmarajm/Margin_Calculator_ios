@@ -1,6 +1,6 @@
-<ion-view cache-view="false" ng-cloak>
+<ion-view cache-view="false">
   <ion-nav-title>
-    <span class="bar-stable"><strong class="header-title">RELOCATION</strong></span>
+    <span class="bar-stable"><strong class="header-title">LOCATION</strong></span>
   </ion-nav-title>
 
   <h1 class="consultant-name">{{candidatename}}</h1>
@@ -8,6 +8,11 @@
   <ion-content class="ion-content content-view relocation-content" ng-class="{'animate-in-primary': data == 'swiperight' , 'animate-in-secondary': data == 'swipeleft' }">
 
     <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher> -->
+     
+    <div class="row bill-content" ng-show="locMsg">
+      <br>
+      <p>{{locMsg}}</p>
+    </div>
     
     <div class="groupButton">
       <button class="button button-block button-white" id="select_locate" ng-click="selectState()">
@@ -17,7 +22,7 @@
 
     <div class="row group-center">
       <div class="col col-50">
-        <p>STANDARD REIMBURSEMENT IS UPTO:</p>
+        <p>STANDARD RELOCATION IS UPTO:</p>
       </div>
       <div class="col col-50">
         <p>ACTUAL
@@ -57,10 +62,10 @@
    <div class="bar bar-footer" ng-controller="LoginCtrl">
     <div class="row" style="justify-content: space-between;">
       <div class="footer-title">
-        Adj.Rate:<span>${{adjRate | number:2 }}</span>
+        Adj.Rate:<span>${{(adjRate | number:2) || 0 }}</span>
       </div>
       <div class="footer-title1">
-        Margin:<span>${{marginDollar | number:2 }}&nbsp;|&nbsp;{{marginPercentage | number:2 }}%</span>
+        Margin:<span>${{(marginDollar | number:2) || 0 }}&nbsp;|&nbsp;{{(marginPercentage | number:2) || 0}}%</span>
       </div>
     </div>
   </div>

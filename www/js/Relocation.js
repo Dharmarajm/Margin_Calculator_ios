@@ -1,6 +1,6 @@
 angular.module('Relocation', [])
 
-.controller('RelocationCtrl', function($scope,$state,$http,$rootScope,$ionicLoading,$timeout) {
+.controller('RelocationCtrl', function($scope,$state,$http,$rootScope,$ionicLoading,$timeout,$ionicPopup) {
    
     if($rootScope.candidatename == "Consultant Name" ||  $rootScope.candidatename == undefined || $rootScope.candidatename == null || $rootScope.candidatename == ""){  
       $rootScope.candidatename="Consultant Name"; 
@@ -8,8 +8,14 @@ angular.module('Relocation', [])
     else{
       $rootScope.candidatename=$rootScope.candidatename;
     }
-  
-    $scope.relocation=$rootScope.OverAllData[0].relocation;
+    if($rootScope.OverAllData[0].relocation == null || $rootScope.OverAllData[0].relocation == "" || $rootScope.OverAllData[0].relocation ==undefined){
+      $scope.locMsg="Relocation is waived"
+      $scope.relocation={relocation:0}
+    }
+    else{
+      $scope.relocation=$rootScope.OverAllData[0].relocation;  
+    }
+    
    
     $scope.locationValue = function() {
       $rootScope.reLocationValue=$scope.sliderRelocation.min;
@@ -91,5 +97,6 @@ angular.module('Relocation', [])
     $rootScope.relocation_name=state.state_name;
     $rootScope.relocation_value=state.tax_per_hour;
     $state.go("tab.relocation")
+    $rootScope.doRefresh();
   }
 })
